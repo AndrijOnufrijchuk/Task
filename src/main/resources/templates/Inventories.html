@@ -13,13 +13,18 @@
         <th>ProductID</th>
         <th>ProductName</th>
         <th>CategoryName</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="inventory : ${inventories}">
+
         <td th:text="${inventory.ProductID}">ProductID</td>
         <td th:text="${inventory.ProductName}">ProductName</td>
         <td th:text="${inventory.CategoryName}">CategoryName</td>
+        <td><a th:href="@{/edit/{id}(id=${inventory.ProductID})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${inventory.ProductID})}">Delete</a></td>
     </tr>
     </tbody>
 </table>

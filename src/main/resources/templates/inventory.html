@@ -7,11 +7,14 @@
 </head>
 <body>
 
+<p> <a href="http://localhost:8080/inventories">Get full list of Inventories</a> </p>
 <table>
     <tr>
         <th>ProductID</th>
         <th>ProductName</th>
         <th>CategoryName</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
 
     <tr th:each="inventory : ${inventories}">
@@ -19,9 +22,12 @@
             <p > <td th:text="${inventory.ProductID}">ProductID</td>
             <td th:text="${inventory.ProductName}">ProductName</td>
             <td th:text="${inventory.CategoryName}">CategoryName</td></p>
+            <td><a th:href="@{/edit/{id}(id=${inventory.ProductID})}">Edit</a></td>
+            <td><a th:href="@{/delete/{id}(id=${inventory.ProductID})}">Delete</a></td>
         </div>
     </tr>
 </table>
+
 
 </body>
 </html>

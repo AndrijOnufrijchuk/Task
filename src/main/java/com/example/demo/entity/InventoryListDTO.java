@@ -1,9 +1,14 @@
 package com.example.demo.entity;
 
+
+import com.sun.javafx.beans.IDProperty;
+
 public class InventoryListDTO {
 
     private int ProductID;
+
     private String ProductName;
+
     private String CategoryName;
 
     public InventoryListDTO() {

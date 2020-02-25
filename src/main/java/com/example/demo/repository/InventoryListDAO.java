@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 
 
 @Repository
-public class InventoryListRepo {
+public class InventoryListDAO {
     @Autowired
     JdbcTemplate jdbcTemplate;
 

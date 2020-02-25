@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.sql.*;
 
 @SpringBootApplication
-public class TestProjectApplication {
+public class Test {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TestProjectApplication.class, args);
+		SpringApplication.run(Test.class, args);
 
 		String dbURL = "jdbc:mysql://127.0.0.1:3306/market?serverTimezone=UTC";
 		String username = "root";
