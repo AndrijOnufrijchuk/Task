@@ -1,6 +1,4 @@
 package com.example.demo;
-import com.example.demo.entity.Category;
-import com.example.demo.entity.InventoryList;
 import com.example.demo.repository.CategoryRepo;
 import com.example.demo.repository.InventoryListRepo;
 import org.slf4j.Logger;
@@ -31,7 +29,7 @@ public class Application implements CommandLineRunner {
       //  logger.info("Inserting -> {}", employeeRepository.insert(new Category("Andruxzxcsha")));
        // logger.info("Inserting -> {}", inventoryListRepo.insert(new InventoryList("newProd","meat")));
        // logger.info("Employee id 10011 -> {}", employeeRepository.findById(1));
-       logger.info("All users -> {}", employeeRepository.findAll());
+      // logger.info("All users -> {}", employeeRepository.findAll());
         //logger.info("All users -> {}", inventoryListRepo.deleteById(1));
     }
 

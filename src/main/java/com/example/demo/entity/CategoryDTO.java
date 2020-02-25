@@ -1,17 +1,18 @@
 package com.example.demo.entity;
 
-public class Category {
+
+public class CategoryDTO {
     private int CategoryID;
     private String CategoryName;
 
-    public Category() {
+    public CategoryDTO() {
     }
 
-    public Category( String categoryName,int categoryID) {
+    public CategoryDTO(String categoryName, int categoryID) {
         CategoryID = categoryID;
         CategoryName = categoryName;
     }
-    public Category( String categoryName) {
+    public CategoryDTO(String categoryName) {
         CategoryName = categoryName;
     }
 

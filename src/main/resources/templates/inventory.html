@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Home</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>ProductID</th>
+        <th>ProductName</th>
+        <th>CategoryName</th>
+    </tr>
+
+    <tr th:each="inventory : ${inventories}">
+        <div th:if="${inventory.ProductID}<=10">
+            <p > <td th:text="${inventory.ProductID}">ProductID</td>
+            <td th:text="${inventory.ProductName}">ProductName</td>
+            <td th:text="${inventory.CategoryName}">CategoryName</td></p>
+        </div>
+    </tr>
+</table>
+
+</body>
+</html>

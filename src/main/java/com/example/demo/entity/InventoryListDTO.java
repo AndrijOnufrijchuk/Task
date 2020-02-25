@@ -1,20 +1,20 @@
 package com.example.demo.entity;
 
-public class InventoryList {
+public class InventoryListDTO {
 
     private int ProductID;
     private String ProductName;
     private String CategoryName;
 
-    public InventoryList() {
+    public InventoryListDTO() {
     }
 
-    public InventoryList(String productName, String categoryName) {
+    public InventoryListDTO(String productName, String categoryName) {
         ProductName = productName;
         CategoryName = categoryName;
     }
 
-    public InventoryList(int productID, String productName, String categoryName) {
+    public InventoryListDTO(int productID, String productName, String categoryName) {
         ProductID = productID;
         ProductName = productName;
         CategoryName = categoryName;

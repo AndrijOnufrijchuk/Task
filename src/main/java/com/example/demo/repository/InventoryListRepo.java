@@ -3,7 +3,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
-import com.example.demo.entity.InventoryList;
+import com.example.demo.entity.InventoryListDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,10 +17,10 @@ public class InventoryListRepo {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    class EmployeeRowMapper implements RowMapper <InventoryList> {
+    class EmployeeRowMapper implements RowMapper <InventoryListDTO> {
         @Override
-        public InventoryList mapRow(ResultSet rs, int rowNum) throws SQLException {
-            InventoryList inventoryList = new InventoryList();
+        public InventoryListDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
+            InventoryListDTO inventoryList = new InventoryListDTO();
             inventoryList.setProductID(rs.getInt("ProductID"));
             inventoryList.setProductName(rs.getString("ProductName"));
             inventoryList.setCategoryName(rs.getString("CategoryName"));
@@ -29,15 +29,15 @@ public class InventoryListRepo {
         }
     }
 
-    public List < InventoryList > findAll() {
+    public List <InventoryListDTO> findAll() {
         return jdbcTemplate.query("select * from InventoryList", new EmployeeRowMapper());
     }
 
-    public Optional < InventoryList > findById(int id) {
+    public Optional <InventoryListDTO> findById(int id) {
         return Optional.of(jdbcTemplate.queryForObject("select * from InventoryList where ProductID=?", new Object[] {
                         id
                 },
-                new BeanPropertyRowMapper < InventoryList > (InventoryList.class)));
+                new BeanPropertyRowMapper <InventoryListDTO> (InventoryListDTO.class)));
     }
 
     public int deleteById(int id) {
@@ -46,14 +46,14 @@ public class InventoryListRepo {
         });
     }
 
-    public int insert(InventoryList inventoryList) {
+    public int insert(InventoryListDTO inventoryList) {
         return jdbcTemplate.update("insert into InventoryList (ProductName,CategoryName) " + "values(?,?)",
                 new Object[] {
                         inventoryList.getProductName() , inventoryList.getCategoryName()
                 });
     }
 
-    public int update(InventoryList inventoryList) {
+    public int update(InventoryListDTO inventoryList) {
         return jdbcTemplate.update("update InventoryList " + " set ProductName = ?,CategoryName = ?   " + " where ProductID = ?",
                 new Object[] {
                         inventoryList.getProductName(), inventoryList.getCategoryName(),inventoryList.getProductID()
